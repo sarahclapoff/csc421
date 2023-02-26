@@ -1,0 +1,12 @@
+assign(max_seconds, 30).
+
+formulas(assumptions).
+    all x all y (Horse(x) & Dog(y) -> Faster(x,y)).
+    exists y (Greyhound(y) & all z (Rabbit(z) -> Faster(y,z))).
+    all y (Greyhound(y) -> Dog(y)).
+    all x all y all z (Faster(x,y) & Faster(y,z) -> Faster(x,z)).
+end_of_list.
+
+formulas(goals).
+    all x all y (Horse(x) & Rabbit(y) -> Faster(x,y)).
+end_of_list.

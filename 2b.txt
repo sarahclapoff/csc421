@@ -1,0 +1,12 @@
+assign(max_seconds, 30).
+
+formulas(assumptions).
+    all x (hummingbird(x) -> colourful(x)).
+    all x (hummingbird(x) -> bird(x)).
+    all x ((large(x) & bird(x)) -> -lives(x,honey)).
+    all x ((bird(x) & -lives(x,honey)) -> -colourful(x)).
+end_of_list.
+
+formulas(goals).
+    all x (hummingbird(x) -> -large(x)).
+end_of_list.

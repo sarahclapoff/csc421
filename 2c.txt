@@ -1,0 +1,11 @@
+assign(max_seconds, 30).
+
+formulas(assumptions).
+    all x (gardener(x) -> listen(x)).
+    all x (waterloo(x) -> old(x)).
+    all x (listen(x) -> waterloo(x)).
+end_of_list.
+
+formulas(goals).
+    all x (gardener(x) -> old(x)).
+end_of_list.
